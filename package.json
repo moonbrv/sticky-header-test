@@ -1,0 +1,34 @@
+{
+  "name": "sticky-header-test",
+  "version": "0.0.1",
+  "description": "There are my test to the Front-end developer work",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moonbrv/sticky-header-test.git"
+  },
+  "keywords": [
+    "sticky",
+    "sticky-header"
+  ],
+  "author": "Dmitry Palamarchuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moonbrv/sticky-header-test/issues"
+  },
+  "homepage": "https://github.com/moonbrv/sticky-header-test#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "browser-sync": "^2.13.0",
+    "css-declaration-sorter": "^1.4.0",
+    "css-mqpacker": "^5.0.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}
