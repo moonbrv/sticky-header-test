@@ -9,7 +9,9 @@ var autoprefixer = require("autoprefixer");
 var bs = require("browser-sync").create();
 var mqpacker = require('css-mqpacker');
 var cssdeclsort = require('css-declaration-sorter');
+var gulpIf = require('gulp-if');
 
+var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 /* --- plugins setup --- */
 var reload = bs.reload;
@@ -37,7 +39,7 @@ gulp.task('html', function(){
 /* --- sass --- */
 gulp.task('sass', function(){
 	return gulp.src(paths.style_src)
-	.pipe(sourcemaps.init())
+	.pipe(gulpIf(isDevelopment, sourcemaps.init()))
 	.pipe(sass(sassOptions).on('error', sass.logError))
 	.pipe(concat('style.css'))
 	.pipe(postcss([
@@ -49,16 +51,16 @@ gulp.task('sass', function(){
 			order: 'smacss'
 			}),
 		]))
-	.pipe(sourcemaps.write())
+	.pipe(gulpIf(isDevelopment, sourcemaps.write()))
 	.pipe(gulp.dest(paths.style_dest));
 });
 
 /* --- javascripts --- */
 gulp.task('js', function(){
 	return gulp.src(paths.js_src)
-	.pipe(sourcemaps.init())
+	.pipe(gulpIf(isDevelopment, sourcemaps.init()))
 	.pipe(concat('index.js'))
-	.pipe(sourcemaps.write())
+	.pipe(gulpIf(isDevelopment, sourcemaps.write()))
 	.pipe(gulp.dest(paths.js_dest));
 });
 

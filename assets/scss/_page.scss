@@ -21,18 +21,9 @@ in (#D85336, #2FBFBC, first),
 	}
 
 %sticky {
-	position: fixed;
+	position: fixed !important;
 	width: 100%;
 	top: 0;
-}
-
-[class*="--always-sticky"] {
-	@extend %sticky;
-}
-
-[class*="--sticky"] {
-	@extend %sticky;
-	z-index: 999;
 }
 
 .headline {
@@ -45,14 +36,28 @@ in (#D85336, #2FBFBC, first),
 }
 
 .info {
+	&__header {
+		position: relative;
+	}
 	&__description {
 		max-width: 700px;
 		margin: 0 auto;
 		padding: 20px 15px;
+		&:before {
+			content: ' ';
+		}
 	}
 	&__text {
-		line-height: 22px;
-		font-size: 18px;
+		line-height: 24px;
+		font-size: 20px;
 	}
 }
 
+[class*="--always-sticky"] {
+	@extend %sticky;
+}
+
+[class*="--sticky"] {
+	@extend %sticky;
+	z-index: 999;
+}
