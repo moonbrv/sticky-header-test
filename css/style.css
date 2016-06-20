@@ -180,6 +180,7 @@ th{
 }
 
 body{
+  position:relative;
   color:white;
 }
 
@@ -246,7 +247,11 @@ body{
 }
 
 .github{
+  position:absolute;
+  bottom:0;
+  width:100%;
   height:80px;
+  margin-bottom:-80px;
   background-color:orange;
 }
 
