@@ -208,13 +208,6 @@ body{
   background-color:#0A2828;
 }
 
-[class*="--always-sticky"], [class*="--sticky"]{
-  position:fixed !important;
-  top:0;
-  width:100%;
-  z-index:2;
-}
-
 .headline{
   position:relative;
   line-height:80px;
@@ -243,6 +236,13 @@ body{
 
 .info__text--important{
   color:#000;
+}
+
+[class*="--always-sticky"], [class*="--sticky"]{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:2;
 }
 
 .github{
