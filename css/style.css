@@ -186,7 +186,6 @@ body{
 
 .headline--first{
   background-color:#D85336;
-  z-index:11;
 }
 
 .info--first{
@@ -195,7 +194,6 @@ body{
 
 .headline--second{
   background-color:#F2CA3C;
-  z-index:22;
 }
 
 .info--second{
@@ -204,7 +202,6 @@ body{
 
 .headline--third{
   background-color:#75AD2B;
-  z-index:33;
 }
 
 .info--third{
@@ -215,12 +212,14 @@ body{
   position:fixed !important;
   top:0;
   width:100%;
+  z-index:2;
 }
 
 .headline{
   position:relative;
   line-height:80px;
   text-align:center;
+  z-index:3;
 }
 
 .headline__text{
