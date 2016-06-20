@@ -15,13 +15,6 @@ in 	(#D85336, #2FBFBC, first),
 		}
 	}
 
-%sticky {
-	position: fixed !important;
-	width: 100%;
-	top: 0;
-	z-index: 2;
-}
-
 .headline {
 	line-height: 80px;
 	text-align: center;
@@ -48,6 +41,13 @@ in 	(#D85336, #2FBFBC, first),
 			color: #000;
 		}
 	}
+}
+
+%sticky {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 2;
 }
 
 [class*="--always-sticky"] {
