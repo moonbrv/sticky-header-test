@@ -3,13 +3,12 @@ body {
 	position: relative;
 }
 
-@each $header-bg-color, $section-bg-color, $modificator, $z
-in 	(#D85336, #2FBFBC, first, 11),
-	(#F2CA3C, #303F9F, second, 22),
-	(#75AD2B, #0A2828, third, 33) {
+@each $header-bg-color, $section-bg-color, $modificator
+in 	(#D85336, #2FBFBC, first),
+	(#F2CA3C, #303F9F, second),
+	(#75AD2B, #0A2828, third) {
 		.headline--#{$modificator} {
 			background-color: $header-bg-color;
-			z-index: $z;
 		}
 		.info--#{$modificator} {
 			background-color: $section-bg-color;
@@ -20,12 +19,14 @@ in 	(#D85336, #2FBFBC, first, 11),
 	position: fixed !important;
 	width: 100%;
 	top: 0;
+	z-index: 2;
 }
 
 .headline {
 	line-height: 80px;
 	text-align: center;
 	position: relative;
+	z-index: 3;
 	&__text {
 		margin: 0;
 	}
