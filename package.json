@@ -4,7 +4,8 @@
   "description": "There are my test to the Front-end developer work",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod": "set NODE_ENV=production && gulp html js sass"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "gulp-if": "^2.0.1",
     "gulp-postcss": "^6.1.1",
     "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.6.0"
+    "gulp-sourcemaps": "^1.6.0",
+    "postcss-discard-comments": "^2.0.4"
   }
 }

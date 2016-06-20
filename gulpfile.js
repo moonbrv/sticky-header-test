@@ -10,6 +10,7 @@ var bs = require("browser-sync").create();
 var mqpacker = require('css-mqpacker');
 var cssdeclsort = require('css-declaration-sorter');
 var gulpIf = require('gulp-if');
+var unComment = require('postcss-discard-comments');
 
 var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
@@ -43,13 +44,16 @@ gulp.task('sass', function(){
 	.pipe(sass(sassOptions).on('error', sass.logError))
 	.pipe(concat('style.css'))
 	.pipe(postcss([
+		unComment({
+			removeAll: true
+		}),
 		autoprefixer(),
 		mqpacker({
 			sort: true
-			}),
+		}),
 		cssdeclsort({
 			order: 'smacss'
-			}),
+		}),
 		]))
 	.pipe(gulpIf(isDevelopment, sourcemaps.write()))
 	.pipe(gulp.dest(paths.style_dest));

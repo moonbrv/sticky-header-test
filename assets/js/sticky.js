@@ -1,7 +1,12 @@
 'use strict'
 
 var headers = document.querySelectorAll('.headline');
-var descriptions = document.querySelectorAll('.info__description:before');
+var descriptions = document.querySelectorAll('.info__description');
+var placeholders = document.querySelectorAll('.placeholder');
+
+console.log(placeholders);
+
+placeholders[0].style.height = headers[0].offsetHeight + 'px'
 
 var defaultPosition = Array.prototype.map.call(headers,function(el){
 	return {
@@ -10,27 +15,26 @@ var defaultPosition = Array.prototype.map.call(headers,function(el){
 	};
 });
 
-Array.prototype.forEach.call(descriptions, function (el, i) {
-	el.style.height = defaultPosition[i].height + 'px';
+var paddings = Array.prototype.map.call(descriptions,function(element){
+	return parseInt(window.getComputedStyle(element, null).getPropertyValue("padding-top"));
 });
 
 var stack = 0;
+
+console.log(paddings + '   ' + stack);
+
 
 var cls = 'info__header--sticky';
 
 function manipulate(logic, element, index, clas) {
 	if (logic && !element.classList.contains(clas)) {
-		//console.log(index + '    ' + pageYOffset + '   ' + (defaultPosition[index].top - stack));
 		element.classList.add(clas);
-		stack += defaultPosition[index].height;
-		//descriptions[index].style.display = 'block';
-		console.log(index + '    ' + 'add class, stack now is '+ stack);
+		descriptions[index].style.paddingTop = paddings[index] + defaultPosition[index].height + 'px';
+		//stack += defaultPosition[index].height;
 	} else if (!logic && element.classList.contains(clas)) {
-		//console.log(index + '    ' + pageYOffset + '   ' + (defaultPosition[index].top - stack));
 		element.classList.remove('info__header--sticky');
-		//descriptions[index].style.display = 'none';
-		stack -= defaultPosition[index].height;
-		//console.log(index + '    ' + 'REMOVE class, stack now is '+ stack);
+		descriptions[index].style.paddingTop = paddings[index] + 'px';
+		//stack -= defaultPosition[index].height;
 	}
 };
 
@@ -39,9 +43,7 @@ function sticky() {
 		var bool = pageYOffset >= (defaultPosition[i].top - stack);
 		manipulate(bool, headers[i], i, cls);
 	}
-
 }
-
 
 window.onscroll = sticky;
 

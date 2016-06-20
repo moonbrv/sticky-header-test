@@ -1,15 +1,11 @@
 body {
 	background-color: #047DC9;
-	min-height: 1500px;
+	min-height: 2000px;
 	color: white;
 }
 
-.placeholder {
-	height: 80px;
-}
-
 @each $header-bg-color, $section-bg-color, $modificator 
-in (#D85336, #2FBFBC, first),
+in 	(#D85336, #2FBFBC, first),
 	(#F2CA3C, #303F9F, second),
 	(#75AD2B, #0A2828, third) {
 		.headline--#{$modificator} {
@@ -27,7 +23,6 @@ in (#D85336, #2FBFBC, first),
 }
 
 .headline {
-	//height: 80px;
 	line-height: 80px;
 	text-align: center;
 	&__text {
