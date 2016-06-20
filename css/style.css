@@ -180,13 +180,12 @@ th{
 }
 
 body{
-  min-height:2000px;
-  background-color:#047DC9;
   color:white;
 }
 
 .headline--first{
   background-color:#D85336;
+  z-index:11;
 }
 
 .info--first{
@@ -195,6 +194,7 @@ body{
 
 .headline--second{
   background-color:#F2CA3C;
+  z-index:22;
 }
 
 .info--second{
@@ -203,6 +203,7 @@ body{
 
 .headline--third{
   background-color:#75AD2B;
+  z-index:33;
 }
 
 .info--third{
@@ -216,16 +217,13 @@ body{
 }
 
 .headline{
+  position:relative;
   line-height:80px;
   text-align:center;
 }
 
 .headline__text{
   margin:0;
-}
-
-.info__header{
-  position:relative;
 }
 
 .info__description{
@@ -243,6 +241,24 @@ body{
   line-height:24px;
 }
 
-[class*="--sticky"]{
-  z-index:999;
+.info__text--important{
+  color:#000;
+}
+
+.github{
+  height:80px;
+  background-color:orange;
+}
+
+.github__link{
+  -webkit-transform:translateY(-50%);
+  display:block;
+  position:relative;
+  top:50%;
+  width:100px;
+  height:80px;
+  margin:0 auto;
+          transform:translateY(-50%);
+  background:transparent url("http://cdn.instantlogosearch.com/svg/svgporn/github.svg") no-repeat center center;
+  background-size:80px 100px;
 }
