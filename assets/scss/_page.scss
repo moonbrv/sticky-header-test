@@ -32,9 +32,6 @@ in 	(#D85336, #2FBFBC, first),
 		max-width: 700px;
 		margin: 0 auto;
 		padding: 20px 15px;
-		&:before {
-			content: ' ';
-		}
 	}
 	&__text {
 		line-height: 24px;
