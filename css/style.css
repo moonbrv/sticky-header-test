@@ -210,23 +210,21 @@ body{
 
 .headline{
   position:relative;
-  line-height:80px;
   text-align:center;
-  z-index:3;
+  z-index:2;
 }
 
 .headline__text{
   margin:0;
+  padding:28px 0;
+  font-size:24px;
+  line-height:24px;
 }
 
 .info__description{
   max-width:700px;
   margin:0 auto;
   padding:20px 15px;
-}
-
-.info__description:before{
-  content:' ';
 }
 
 .info__text{
@@ -242,7 +240,7 @@ body{
   position:fixed;
   top:0;
   width:100%;
-  z-index:2;
+  z-index:3;
 }
 
 .github{
