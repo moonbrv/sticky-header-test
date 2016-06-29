@@ -7,3 +7,12 @@ In this project I used:
 - BrowserSync
 - Sass
 - Pure JS
+
+To build project:
+1. Clone/download repository.
+2. Cd in the folder with repository.
+3. Run command:
+  
+  ```
+  gulp
+  ```

@@ -1,12 +1,14 @@
 body {
 	color: white;
 	position: relative;
+	background-color: #212121;
 }
 
 @each $header-bg-color, $section-bg-color, $modificator
 in 	(#D85336, #2FBFBC, first),
 	(#F2CA3C, #303F9F, second),
-	(#75AD2B, #0A2828, third) {
+	(#75AD2B, #0A2828, third),
+	(#4A148C, #b71c1c, fourth) {
 		.headline--#{$modificator} {
 			background-color: $header-bg-color;
 		}
@@ -14,6 +16,17 @@ in 	(#D85336, #2FBFBC, first),
 			background-color: $section-bg-color;
 		}
 	}
+
+%text {
+	line-height: 24px;
+	font-size: 20px;
+}
+
+%container {
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 20px 15px;
+}
 
 .headline {
 	text-align: center;
@@ -29,32 +42,30 @@ in 	(#D85336, #2FBFBC, first),
 
 .info {
 	&__description {
-		max-width: 700px;
-		margin: 0 auto;
-		padding: 20px 15px;
+		@extend %container;
 	}
 	&__text {
-		line-height: 24px;
-		font-size: 20px;
-		&--important {
-			color: #000;
-		}
+		@extend %text;
 	}
 }
 
-%sticky {
+[class*="--sticky"] {
 	position: fixed;
 	width: 100%;
 	top: 0;
 	z-index: 3;
 }
 
-[class*="--always-sticky"] {
-	@extend %sticky;
-}
-
-[class*="--sticky"] {
-	@extend %sticky;
+.placeholder {
+	@extend %container;
+	min-height: 130px;
+	&__text {
+		@extend %text;
+	}
+	&__headline {
+		text-align: center;
+		text-transform: uppercase;
+	}
 }
 
 .github {
