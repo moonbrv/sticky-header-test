@@ -5,12 +5,6 @@ var descriptions = document.querySelectorAll('.info__description');
 var placeholders = document.querySelectorAll('.placeholder');
 var infos = document.querySelectorAll('.info');
 
-/*placeholder get hight of first header, 
-when hight of it < header.hight, 
-header will hide some area of section below
-*/
-//placeholders[0].style.height = headers[0].offsetHeight + 'px';
-
 //get sum of hights of all alements above selected + placeholder.hight
 function getTop(element, i) {
 	var h = placeholders[0].offsetHeight;
