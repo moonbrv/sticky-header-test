@@ -181,6 +181,7 @@ th{
 
 body{
   position:relative;
+  background-color:#212121;
   color:white;
 }
 
@@ -208,6 +209,25 @@ body{
   background-color:#0A2828;
 }
 
+.headline--fourth{
+  background-color:#4A148C;
+}
+
+.info--fourth{
+  background-color:#b71c1c;
+}
+
+.info__text, .placeholder__text{
+  font-size:20px;
+  line-height:24px;
+}
+
+.info__description, .placeholder{
+  max-width:700px;
+  margin:0 auto;
+  padding:20px 15px;
+}
+
 .headline{
   position:relative;
   text-align:center;
@@ -221,26 +241,20 @@ body{
   line-height:24px;
 }
 
-.info__description{
-  max-width:700px;
-  margin:0 auto;
-  padding:20px 15px;
-}
-
-.info__text{
-  font-size:20px;
-  line-height:24px;
-}
-
-.info__text--important{
-  color:#000;
-}
-
-[class*="--always-sticky"], [class*="--sticky"]{
+[class*="--sticky"]{
   position:fixed;
   top:0;
   width:100%;
   z-index:3;
+}
+
+.placeholder{
+  min-height:130px;
+}
+
+.placeholder__headline{
+  text-align:center;
+  text-transform:uppercase;
 }
 
 .github{

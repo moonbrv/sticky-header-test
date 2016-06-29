@@ -5,12 +5,6 @@ var descriptions = document.querySelectorAll('.info__description');
 var placeholders = document.querySelectorAll('.placeholder');
 var infos = document.querySelectorAll('.info');
 
-/*placeholder get hight of first header, 
-when hight of it < header.hight, 
-header will hide some area of section below
-*/
-placeholders[0].style.height = headers[0].offsetHeight + 'px';
-
 //get sum of hights of all alements above selected + placeholder.hight
 function getTop(element, i) {
 	var h = placeholders[0].offsetHeight;
@@ -54,13 +48,9 @@ function manipulate(logic, element, index, clas) {
 	}
 };
 
-/*
-starting from 1 because firs header always sticky
-if you want all headers non sticky on load, change i strat from 0
-and remove clas info__header--always-sticky from headline
-*/
+
 function sticky() {
-	for(var i = 1; i < headers.length; i++) {
+	for(var i = 0; i < headers.length; i++) {
 		//if (scroll of the Page > an element's offset from document's top) then true
 		var bool = pageYOffset >= topPosition[i];
 		manipulate(bool, headers[i], i, cls);
