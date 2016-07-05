@@ -2,16 +2,12 @@
 
 var headers = document.querySelectorAll('.headline');
 var descriptions = document.querySelectorAll('.info__description');
-var placeholders = document.querySelectorAll('.placeholder');
 var infos = document.querySelectorAll('.info');
 
-//get sum of hights of all alements above selected + placeholder.hight
-function getTop(element, i) {
-	var h = placeholders[0].offsetHeight;
-	for (var k = 0; k < i; k++) {
-		h += infos[k].offsetHeight;
-	}
-	return h;
+//get offset of an element from page top;
+function getTop(element) {
+	var box = element.getBoundingClientRect();
+	return box.top + pageYOffset;
 };
 
 //get offset each section from document's top
