@@ -1,37 +1,51 @@
 {
   "name": "sticky-header-test",
-  "version": "0.0.1",
-  "description": "There are my test to the Front-end developer work",
+  "version": "0.0.2",
+  "description": "This is my realisation of sticky header with pure JS",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prod": "set NODE_ENV=production && gulp html js sass"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/moonbrv/sticky-header-test.git"
-  },
-  "keywords": [
-    "sticky",
-    "sticky-header"
-  ],
-  "author": "Dmitry Palamarchuk",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/moonbrv/sticky-header-test/issues"
-  },
-  "homepage": "https://github.com/moonbrv/sticky-header-test#readme",
-  "devDependencies": {
-    "autoprefixer": "^6.3.6",
-    "browser-sync": "^2.13.0",
-    "css-declaration-sorter": "^1.4.0",
-    "css-mqpacker": "^5.0.1",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-if": "^2.0.1",
-    "gulp-postcss": "^6.1.1",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.6.0",
-    "postcss-discard-comments": "^2.0.4"
-  }
+   "start": "webpack && webpack-dev-server --hot --inline",
+   "build": "webpack --config ./webpack.production.config.js"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/moonbrv/sticky-header-test.git"
+},
+"keywords": [
+  "sticky",
+  "sticky-header"
+],
+"author": "Dmitry Palamarchuk",
+"license": "MIT",
+"bugs": {
+  "url": "https://github.com/moonbrv/sticky-header-test/issues"
+},
+"homepage": "https://github.com/moonbrv/sticky-header-test#readme",
+"devDependencies": {
+  "autoprefixer": "^6.3.6",
+  "babel-core": "^6.10.4",
+  "babel-eslint": "^6.1.0",
+  "babel-loader": "^6.2.4",
+  "babel-plugin-transform-runtime": "^6.9.0",
+  "babel-preset-es2015": "^6.9.0",
+  "babel-runtime": "^6.9.2",
+  "clean-webpack-plugin": "^0.1.9",
+  "css-declaration-sorter": "^1.4.0",
+  "css-loader": "^0.23.1",
+  "cssnano": "^3.7.1",
+  "eslint": "^2.13.1",
+  "eslint-loader": "^1.3.0",
+  "extract-text-webpack-plugin": "^1.0.1",
+  "file-loader": "^0.9.0",
+  "html-webpack-plugin": "^2.21.0",
+  "node-sass": "^3.8.0",
+  "postcss-loader": "^0.9.1",
+  "raw-loader": "^0.5.1",
+  "resolve-url-loader": "^1.4.4",
+  "rimraf": "^2.5.2",
+  "sass-loader": "^4.0.0",
+  "style-loader": "^0.13.1",
+  "webpack": "^1.13.1",
+  "webpack-dev-server": "^1.14.1"
+}
 }
