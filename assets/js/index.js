@@ -28,6 +28,7 @@ let sticky = goSticky('info__header', '.container', 'sticky');
 
 //create sticky header
 sticky.create();
+sticky.check();
 
 /**
 *	if any event that affect headers position will happend,
