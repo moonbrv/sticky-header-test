@@ -4,8 +4,8 @@
   "description": "This is my realisation of sticky header with pure JS",
   "main": "gulpfile.js",
   "scripts": {
-   "start": "webpack && webpack-dev-server --hot --inline",
-   "build": "webpack --config ./webpack.production.config.js"
+   "dev": "webpack && webpack-dev-server --hot --inline",
+   "prod": "webpack --config ./webpack.production.config.js"
  },
  "repository": {
   "type": "git",

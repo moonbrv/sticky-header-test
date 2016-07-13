@@ -1,0 +1,79 @@
+body {
+	color: white;
+	position: relative;
+	background-color: #212121;
+}
+
+@each $header-bg-color, $modificator
+in 	(#D85336, first),
+	(#F2CA3C, second),
+	(#75AD2B, third),
+	(#4A148C, fourth) {
+		.headline--#{$modificator} {
+			background-color: $header-bg-color;
+		}
+	}
+
+%text {
+	line-height: 24px;
+	font-size: 20px;
+}
+
+.container {
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+.headline {
+	text-align: center;
+	position: relative;
+	z-index: 2;
+	&__text {
+		margin: 0;
+		line-height: 24px;
+		font-size: 24px;
+		padding: 28px 0;
+	}
+}
+
+.info {
+	&__text {
+		@extend %text;
+	}
+}
+
+#sticky {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 3;
+	text-align: center;
+}
+
+.placeholder {
+	min-height: 130px;
+	&__text {
+		@extend %text;
+	}
+	&__headline {
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+.github {
+	background-color: orange;
+	height: 80px;
+	width: 100%;
+	&__link {
+		display: block;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		text-align: center;
+	}
+	&__img {
+		height: 40px;
+	}
+}
