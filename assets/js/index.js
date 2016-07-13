@@ -35,3 +35,4 @@ window.onscroll = sticky.check;
 window.onresize = sticky.rebuild;
 window.orientationchange = sticky.rebuild;
 window.ontouchmove = sticky.check;
+window.ontouchstart = sticky.check;
