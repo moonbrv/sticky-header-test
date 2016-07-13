@@ -4,15 +4,22 @@ body {
 	background-color: #212121;
 }
 
+html,
+body {
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	overflow-x: hidden;
+}
+
 @each $header-bg-color, $modificator
 in 	(#D85336, first),
-	(#E9C92D, second),
-	(#75AD2B, third),
-	(#4A148C, fourth) {
-		.headline--#{$modificator} {
-			background-color: $header-bg-color;
-		}
+(#E9C92D, second),
+(#75AD2B, third),
+(#4A148C, fourth) {
+	.headline--#{$modificator} {
+		background-color: $header-bg-color;
 	}
+}
 
 %text {
 	line-height: 24px;
@@ -49,12 +56,11 @@ in 	(#D85336, first),
 #sticky {
 	position: fixed;
 	width: 100%;
-	//padding-top: 100px;
+	padding-top: 100px;
 	top: 0;
-	//margin-top: -100px;
+	margin-top: -100px;
 	z-index: 3;
 	text-align: center;
-	transform: translateZ(0);
 }
 
 .placeholder {
