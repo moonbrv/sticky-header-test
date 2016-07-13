@@ -26,6 +26,9 @@ import goSticky from './goSticky';
 **/
 let sticky = goSticky('info__header', '.container', 'sticky');
 
+//create sticky header
+sticky.create();
+
 /**
 *	if any event that affect headers position will happend,
 *	we will call functions that manipulate sticky header

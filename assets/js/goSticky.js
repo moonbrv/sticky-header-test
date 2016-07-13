@@ -48,12 +48,19 @@ export default function goSticky(headerClass, mountQuerySelector, stickyId) {
 		stickyHeader.style.width = window.getComputedStyle(document.querySelector(mountQuerySelector), null).getPropertyValue('width');
 	}
 
-	//creating sticky-header
+	//creating sticky header
 	const stickyHeader = document.createElement('div');
 	stickyHeader.id = stickyId || '';
 
-	//mount sticky header in to chosen element
-	function mount() {
+	//reset innerHTML and styles and counter
+	function reset() {
+		stickyHeader.innerHTML = '';
+		stickyHeader.style.backgroundColor = '';
+		current = undefined;
+	}
+
+	//create sticky header in the chosen element
+	function create() {
 		calcWidth();
 		document.querySelector(mountQuerySelector).appendChild(stickyHeader);
 	}
@@ -80,22 +87,13 @@ export default function goSticky(headerClass, mountQuerySelector, stickyId) {
 
 	//check if we need to do something with sticky header
 	function check() {
-		//if sticky header is not on page
-		if (!document.getElementById(stickyId)) {
-			//if first header is hidden
-			if (getTop(headers[0]) <= 0) {
-				mount();
-				change();
-			}
+		//if first heder is NOT hidden
+		if (getTop(headers[0]) > 0) {
+			//reset sticky header
+			reset();
 		} else {
-			//if sticky header is on page and first heder is NOT hidden
-			if (getTop(headers[0]) > 0) {
-				//remove sticky header from page
-				remove();
-			} else {
-				// if if sticky header is on page and irst heder is hidden - check if we need to change something
-				change();
-			}
+			//check if we need to change something
+			change();
 		}
 	}
 
@@ -120,6 +118,7 @@ export default function goSticky(headerClass, mountQuerySelector, stickyId) {
 	**/
 	function redefine() {
 		headers = getHeaders();
+		reset()
 		rebuild();
 	}
 	
@@ -128,6 +127,8 @@ export default function goSticky(headerClass, mountQuerySelector, stickyId) {
 	return {
 		check,
 		rebuild,
-		redefine
+		redefine,
+		create,
+		remove
 	};
 }

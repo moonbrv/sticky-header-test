@@ -2,7 +2,7 @@
 
 #### [Try demo in browser](https://moonbrv.github.io/sticky-header-test/)
 
-This is my realisation of sticky header with pure JS. It is responsive and works well on mobile browsers, include android 4.4+ and safari 7+.
+This is my realisation of sticky header with pure JS. It is responsive and works well on mobile browsers, include android 4.4+ and iOS8+.
 
 Heart of this project is a module, wich export a function. This function will create, remove and change sticky header. It can be placed inside any element on page, and will tracking headers that you select.
 
