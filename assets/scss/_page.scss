@@ -1,12 +1,12 @@
 body {
-	color: white;
+	color:  white;
 	position: relative;
 	background-color: #212121;
 }
 
 @each $header-bg-color, $modificator
 in 	(#D85336, first),
-	(#F2CA3C, second),
+	(#E9C92D, second),
 	(#75AD2B, third),
 	(#4A148C, fourth) {
 		.headline--#{$modificator} {
@@ -40,6 +40,10 @@ in 	(#D85336, first),
 .info {
 	&__text {
 		@extend %text;
+		&--key {
+			//font-weight: 600;
+			color: #9BCA3E;
+		}
 	}
 }
 
@@ -64,14 +68,11 @@ in 	(#D85336, first),
 
 .github {
 	background-color: orange;
-	height: 80px;
 	width: 100%;
 	&__link {
 		display: block;
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
 		text-align: center;
+		padding: 20px;
 	}
 	&__img {
 		height: 40px;
