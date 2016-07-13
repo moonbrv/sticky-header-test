@@ -52,6 +52,7 @@ in 	(#D85336, first),
 	top: 0;
 	z-index: 3;
 	text-align: center;
+	backface-visibility: hidden;
 }
 
 .placeholder {
